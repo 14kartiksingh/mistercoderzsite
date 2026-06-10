@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Services | MISTER CODERZ</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container-high": "#2a2a2a",
+                    "error-container": "#93000a",
+                    "text-high-contrast": "#FFFFFF",
+                    "surface-container-low": "#1c1b1b",
+                    "tertiary-container": "#059eff",
+                    "on-secondary": "#3a3000",
+                    "on-primary-fixed": "#351000",
+                    "on-surface": "#e5e2e1",
+                    "surface-elevated": "#141414",
+                    "surface-tint": "#ffb693",
+                    "surface-dim": "#131313",
+                    "inverse-surface": "#e5e2e1",
+                    "surface-container-highest": "#353534",
+                    "surface-base": "#0A0A0A",
+                    "on-tertiary-fixed-variant": "#00497b",
+                    "primary-fixed": "#ffdbcc",
+                    "outline-variant": "#5a4136",
+                    "on-secondary-fixed-variant": "#544600",
+                    "tertiary-fixed-dim": "#9ccaff",
+                    "background": "#131313",
+                    "tertiary": "#9ccaff",
+                    "primary-container": "#ff6b00",
+                    "secondary-fixed": "#ffe170",
+                    "surface-container": "#201f1f",
+                    "inverse-primary": "#a04100",
+                    "on-secondary-container": "#6f5c00",
+                    "on-primary-fixed-variant": "#7a3000",
+                    "on-primary-container": "#572000",
+                    "tertiary-fixed": "#d0e4ff",
+                    "primary": "#ffb693",
+                    "surface-bright": "#3a3939",
+                    "on-error-container": "#ffdad6",
+                    "on-background": "#e5e2e1",
+                    "surface-container-lowest": "#0e0e0e",
+                    "error": "#ffb4ab",
+                    "secondary-fixed-dim": "#e9c400",
+                    "border-subtle": "#262626",
+                    "on-tertiary": "#003257",
+                    "primary-fixed-dim": "#ffb693",
+                    "outline": "#a98a7d",
+                    "on-error": "#690005",
+                    "secondary": "#fff3d2",
+                    "on-surface-variant": "#e2bfb0",
+                    "inverse-on-surface": "#313030",
+                    "text-muted": "#A1A1AA",
+                    "secondary-container": "#fdd400",
+                    "on-tertiary-container": "#003357",
+                    "on-primary": "#561f00",
+                    "surface-variant": "#353534",
+                    "on-secondary-fixed": "#221b00",
+                    "surface": "#131313",
+                    "on-tertiary-fixed": "#001d35"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "gutter": "24px",
+                    "container-max": "1280px",
+                    "section-gap": "80px",
+                    "base": "8px",
+                    "margin-mobile": "16px"
+            },
+            "fontFamily": {
+                    "label-mono": ["JetBrains Mono"],
+                    "display-xl": ["Inter"],
+                    "headline-sm": ["Inter"],
+                    "headline-lg": ["Inter"],
+                    "body-sm": ["Inter"],
+                    "body-md": ["Inter"]
+            },
+            "fontSize": {
+                    "label-mono": ["12px", {"lineHeight": "1.5", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                    "display-xl": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "700"}],
+                    "headline-sm": ["24px", {"lineHeight": "1.3", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                    "body-sm": ["14px", {"lineHeight": "1.5", "letterSpacing": "0em", "fontWeight": "400"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "letterSpacing": "0em", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #131313;
+            color: #e5e2e1;
+            font-family: 'Inter', sans-serif;
+        }
+        .glass-nav {
+            background: rgba(10, 10, 10, 0.7);
+            backdrop-filter: blur(12px);
+        }
+        .service-card:hover .accent-bar {
+            width: 100%;
+        }
+        .accent-bar {
+            transition: width 0.3s ease;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="antialiased overflow-x-hidden">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-background/70 backdrop-blur-xl border-b border-border-subtle">
+<div class="flex justify-between items-center h-16 px-gutter max-w-container-max mx-auto">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary-container" style="font-variation-settings: 'FILL' 1;">terminal</span>
+<span class="font-headline-sm text-headline-sm font-bold tracking-tighter text-text-high-contrast">MISTER CODERZ</span>
+</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="font-label-mono text-label-mono text-text-muted hover:text-text-high-contrast transition-colors duration-200" href="#">PORTFOLIO</a>
+<a class="font-label-mono text-label-mono text-primary-container font-medium transition-colors duration-200" href="#">SERVICES</a>
+<a class="font-label-mono text-label-mono text-text-muted hover:text-text-high-contrast transition-colors duration-200" href="#">PROCESS</a>
+<a class="font-label-mono text-label-mono text-text-muted hover:text-text-high-contrast transition-colors duration-200" href="#">STUDIO</a>
+</nav>
+<button class="active:scale-95 transition-transform bg-primary-container px-6 py-2 rounded-lg font-label-mono text-label-mono text-on-primary-container font-bold uppercase tracking-wider">
+                Contact
+            </button>
+</div>
+</header>
+<main class="pt-32 pb-section-gap">
+<!-- Hero Section -->
+<section class="px-gutter max-w-container-max mx-auto mb-20 text-center md:text-left">
+<div class="inline-block px-3 py-1 bg-surface-elevated border border-border-subtle mb-6">
+<span class="font-label-mono text-label-mono text-primary-container uppercase tracking-widest">Engineering as Art</span>
+</div>
+<h1 class="font-display-xl text-display-xl text-text-high-contrast mb-6 max-w-3xl">Our Services</h1>
+<p class="font-body-md text-body-md text-text-muted max-w-2xl leading-relaxed">
+                Boutique engineering for high-growth teams. We transform complex problems into elegant software solutions using cutting-edge architectural patterns and technical precision.
+            </p>
+</section>
+<!-- Services Grid -->
+<section class="px-gutter max-w-container-max mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Service Card 1 -->
+<div class="service-card group bg-surface-elevated border border-border-subtle p-8 relative overflow-hidden flex flex-col justify-between min-h-[400px]">
+<div class="accent-bar absolute top-0 left-0 h-1 bg-primary-container w-0"></div>
+<div>
+<div class="mb-8 w-12 h-12 flex items-center justify-center bg-surface-container-high rounded-lg border border-border-subtle">
+<span class="material-symbols-outlined text-primary-container" style="font-variation-settings: 'FILL' 1;">smartphone</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-text-high-contrast mb-4">Mobile App Development</h3>
+<p class="font-body-sm text-body-sm text-text-muted mb-6">Building high-performance iOS and Android experiences with Flutter and React Native. Native performance meets seamless cross-platform delivery.</p>
+<div class="space-y-4">
+<div>
+<span class="font-label-mono text-[10px] text-primary-container uppercase tracking-widest block mb-2">BENEFITS</span>
+<p class="font-body-sm text-body-sm text-on-surface">Native performance, seamless UX, unified codebase.</p>
+</div>
+<div>
+<span class="font-label-mono text-[10px] text-primary-container uppercase tracking-widest block mb-2">USE CASES</span>
+<p class="font-body-sm text-body-sm text-on-surface">Consumer apps, enterprise mobile tools, fintech wallets.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Service Card 2 -->
+<div class="service-card group bg-surface-elevated border border-border-subtle p-8 relative overflow-hidden flex flex-col justify-between min-h-[400px]">
+<div class="accent-bar absolute top-0 left-0 h-1 bg-primary-container w-0"></div>
+<div>
+<div class="mb-8 w-12 h-12 flex items-center justify-center bg-surface-container-high rounded-lg border border-border-subtle">
+<span class="material-symbols-outlined text-primary-container" style="font-variation-settings: 'FILL' 1;">web</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-text-high-contrast mb-4">Web Development</h3>
+<p class="font-body-sm text-body-sm text-text-muted mb-6">Robust, scalable web architectures using Next.js and Go. Designed for high availability and peak performance under load.</p>
+<div class="space-y-4">
+<div>
+<span class="font-label-mono text-[10px] text-primary-container uppercase tracking-widest block mb-2">BENEFITS</span>
+<p class="font-body-sm text-body-sm text-on-surface">SEO optimized, high availability, edge deployment ready.</p>
+</div>
+<div>
+<span class="font-label-mono text-[10px] text-primary-container uppercase tracking-widest block mb-2">USE CASES</span>
+<p class="font-body-sm text-body-sm text-on-surface">E-commerce platforms, SaaS dashboards, complex web apps.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Service Card 3 -->
+<div class="service-card group bg-surface-elevated border border-border-subtle p-8 relative overflow-hidden flex flex-col justify-between min-h-[400px]">
+<div class="accent-bar absolute top-0 left-0 h-1 bg-primary-container w-0"></div>
+<div>
+<div class="mb-8 w-12 h-12 flex items-center justify-center bg-surface-container-high rounded-lg border border-border-subtle">
+<span class="material-symbols-outlined text-primary-container" style="font-variation-settings: 'FILL' 1;">neurology</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-text-high-contrast mb-4">AI Solutions</h3>
+<p class="font-body-sm text-body-sm text-text-muted mb-6">Custom LLM integrations, predictive analytics, and automated decision engines that turn raw data into intelligence.</p>
+<div class="space-y-4">
+<div>
+<span class="font-label-mono text-[10px] text-primary-container uppercase tracking-widest block mb-2">BENEFITS</span>
+<p class="font-body-sm text-body-sm text-on-surface">Operational efficiency, data-driven insights, 24/7 automation.</p>
+</div>
+<div>
+<span class="font-label-mono text-[10px] text-primary-container uppercase tracking-widest block mb-2">USE CASES</span>
+<p class="font-body-sm text-body-sm text-on-surface">Intelligent chatbots, risk assessment models, RAG systems.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Service Card 4 -->
+<div class="service-card group bg-surface-elevated border border-border-subtle p-8 relative overflow-hidden flex flex-col justify-between min-h-[400px] lg:col-span-1">
+<div class="accent-bar absolute top-0 left-0 h-1 bg-primary-container w-0"></div>
+<div>
+<div class="mb-8 w-12 h-12 flex items-center justify-center bg-surface-container-high rounded-lg border border-border-subtle">
+<span class="material-symbols-outlined text-primary-container" style="font-variation-settings: 'FILL' 1;">settings_suggest</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-text-high-contrast mb-4">Automation Systems</h3>
+<p class="font-body-sm text-body-sm text-text-muted mb-6">Streamlining workflows and eliminating manual overhead with bespoke automation designed for reliability.</p>
+<div class="space-y-4">
+<div>
+<span class="font-label-mono text-[10px] text-primary-container uppercase tracking-widest block mb-2">BENEFITS</span>
+<p class="font-body-sm text-body-sm text-on-surface">Cost reduction, error elimination, hyper-scalability.</p>
+</div>
+<div>
+<span class="font-label-mono text-[10px] text-primary-container uppercase tracking-widest block mb-2">USE CASES</span>
+<p class="font-body-sm text-body-sm text-on-surface">DevOps pipelines, data synchronization, legacy bridge tools.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Service Card 5 (Expanded Style) -->
+<div class="service-card group bg-surface-elevated border border-border-subtle p-8 relative overflow-hidden flex flex-col justify-between min-h-[400px] md:col-span-2">
+<div class="accent-bar absolute top-0 left-0 h-1 bg-primary-container w-0"></div>
+<div class="grid md:grid-cols-2 gap-8 items-center h-full">
+<div>
+<div class="mb-8 w-12 h-12 flex items-center justify-center bg-surface-container-high rounded-lg border border-border-subtle">
+<span class="material-symbols-outlined text-primary-container" style="font-variation-settings: 'FILL' 1;">architecture</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-text-high-contrast mb-4">Custom Software</h3>
+<p class="font-body-sm text-body-sm text-text-muted mb-6">Tailor-made solutions for unique business challenges that don't fit off-the-shelf paradigms. We build your competitive moat.</p>
+<div class="space-y-4">
+<div>
+<span class="font-label-mono text-[10px] text-primary-container uppercase tracking-widest block mb-2">BENEFITS</span>
+<p class="font-body-sm text-body-sm text-on-surface">Full control, competitive advantage, unique architecture.</p>
+</div>
+<div>
+<span class="font-label-mono text-[10px] text-primary-container uppercase tracking-widest block mb-2">USE CASES</span>
+<p class="font-body-sm text-body-sm text-on-surface">Proprietary internal tools, legacy system modernization.</p>
+</div>
+</div>
+</div>
+<div class="hidden md:block">
+<div class="aspect-square bg-surface-container rounded border border-border-subtle overflow-hidden relative">
+<div class="absolute inset-0 bg-gradient-to-tr from-primary-container/10 to-transparent"></div>
+<div class="p-8 h-full flex flex-col justify-center">
+<div class="font-label-mono text-[10px] text-text-muted mb-4">ENGINEERING_MANIFEST.MD</div>
+<div class="space-y-2 opacity-60">
+<div class="h-1 bg-primary-container w-full rounded"></div>
+<div class="h-1 bg-border-subtle w-[80%] rounded"></div>
+<div class="h-1 bg-border-subtle w-[90%] rounded"></div>
+<div class="h-1 bg-border-subtle w-[60%] rounded"></div>
+<div class="h-1 bg-primary-container w-[75%] rounded"></div>
+</div>
+<div class="mt-8 font-label-mono text-[10px] text-on-surface">
+                                        // Custom architectural patterns<br/>
+                                        // Zero technical debt goal<br/>
+                                        // Scalability first mindset
+                                    </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Process Section -->
+<section class="py-section-gap px-gutter max-w-container-max mx-auto">
+<div class="flex flex-col md:flex-row justify-between items-start mb-20 gap-8">
+<div>
+<h2 class="font-headline-lg text-headline-lg text-text-high-contrast mb-4">Our Process</h2>
+<p class="font-body-md text-body-md text-text-muted max-w-xl">
+                        Engineering precision requires a disciplined workflow. Our four-stage methodology ensures we ship high-quality products on time, every time.
+                    </p>
+</div>
+<div class="hidden md:block h-px bg-border-subtle flex-grow mx-12 mt-6"></div>
+<div class="font-label-mono text-label-mono text-primary-container tracking-widest pt-2">MODUS OPERANDI v2.4</div>
+</div>
+<div class="relative grid grid-cols-1 md:grid-cols-4 gap-0">
+<!-- Connective Line -->
+<div class="hidden md:block absolute top-6 left-0 w-full h-[1px] bg-border-subtle z-0"></div>
+<!-- Process Steps -->
+<div class="relative z-10 group pb-12 md:pb-0">
+<div class="w-12 h-12 bg-surface-base border border-primary-container rounded-full flex items-center justify-center mb-8 mx-auto md:mx-0 ring-8 ring-background">
+<span class="font-label-mono text-primary-container">01</span>
+</div>
+<div class="text-center md:text-left md:pr-8">
+<h4 class="font-headline-sm text-[20px] text-text-high-contrast mb-3">Discover</h4>
+<p class="font-body-sm text-body-sm text-text-muted">Deep dive into requirements, stakeholder interviews, and technical architecture feasibility studies.</p>
+</div>
+</div>
+<div class="relative z-10 group pb-12 md:pb-0">
+<div class="w-12 h-12 bg-surface-base border border-border-subtle group-hover:border-primary-container transition-colors rounded-full flex items-center justify-center mb-8 mx-auto md:mx-0 ring-8 ring-background">
+<span class="font-label-mono text-text-muted group-hover:text-primary-container transition-colors">02</span>
+</div>
+<div class="text-center md:text-left md:pr-8">
+<h4 class="font-headline-sm text-[20px] text-text-high-contrast mb-3">Design</h4>
+<p class="font-body-sm text-body-sm text-text-muted">High-fidelity UI/UX design systems and rigorous backend system modeling for future scalability.</p>
+</div>
+</div>
+<div class="relative z-10 group pb-12 md:pb-0">
+<div class="w-12 h-12 bg-surface-base border border-border-subtle group-hover:border-primary-container transition-colors rounded-full flex items-center justify-center mb-8 mx-auto md:mx-0 ring-8 ring-background">
+<span class="font-label-mono text-text-muted group-hover:text-primary-container transition-colors">03</span>
+</div>
+<div class="text-center md:text-left md:pr-8">
+<h4 class="font-headline-sm text-[20px] text-text-high-contrast mb-3">Develop</h4>
+<p class="font-body-sm text-body-sm text-text-muted">Agile engineering cycles with continuous integration, unit testing, and peer-reviewed code commits.</p>
+</div>
+</div>
+<div class="relative z-10 group">
+<div class="w-12 h-12 bg-surface-base border border-border-subtle group-hover:border-primary-container transition-colors rounded-full flex items-center justify-center mb-8 mx-auto md:mx-0 ring-8 ring-background">
+<span class="font-label-mono text-text-muted group-hover:text-primary-container transition-colors">04</span>
+</div>
+<div class="text-center md:text-left">
+<h4 class="font-headline-sm text-[20px] text-text-high-contrast mb-3">Deploy</h4>
+<p class="font-body-sm text-body-sm text-text-muted">Secure launch protocols, infrastructure scaling, and 24/7 post-launch monitoring and optimization.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="px-gutter max-w-container-max mx-auto py-20">
+<div class="bg-surface-elevated border border-border-subtle p-12 md:p-24 relative overflow-hidden text-center rounded-xl">
+<div class="absolute top-0 right-0 p-8 opacity-10">
+<span class="material-symbols-outlined text-[120px]">terminal</span>
+</div>
+<h2 class="font-display-xl text-[48px] md:text-[64px] text-text-high-contrast mb-8 leading-tight">Ready to build something great?</h2>
+<div class="flex flex-col sm:flex-row items-center justify-center gap-6">
+<a class="bg-primary-container text-on-primary-container font-label-mono text-label-mono font-bold px-10 py-5 rounded-lg active:scale-95 transition-transform uppercase tracking-widest shadow-lg shadow-primary-container/20" href="#">
+                        Start a Project
+                    </a>
+<a class="border border-border-subtle text-text-high-contrast hover:bg-surface-container-high font-label-mono text-label-mono font-bold px-10 py-5 rounded-lg transition-all uppercase tracking-widest" href="#">
+                        View Portfolio
+                    </a>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-base border-t border-border-subtle">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-section-gap px-gutter py-20 max-w-container-max mx-auto">
+<div class="md:col-span-1">
+<div class="flex items-center gap-3 mb-6">
+<span class="material-symbols-outlined text-primary-container">terminal</span>
+<span class="font-label-mono text-label-mono uppercase tracking-widest text-text-high-contrast">MISTER CODERZ</span>
+</div>
+<p class="font-body-sm text-body-sm text-text-muted max-w-xs mb-8">
+                    An independent studio dedicated to high-fidelity engineering and the art of software.
+                </p>
+<div class="flex gap-4">
+<a class="w-10 h-10 rounded border border-border-subtle flex items-center justify-center hover:bg-primary-container hover:border-primary-container transition-all text-text-muted hover:text-on-primary-container" href="#">
+<span class="material-symbols-outlined text-[20px]">alternate_email</span>
+</a>
+<a class="w-10 h-10 rounded border border-border-subtle flex items-center justify-center hover:bg-primary-container hover:border-primary-container transition-all text-text-muted hover:text-on-primary-container" href="#">
+<span class="material-symbols-outlined text-[20px]">share</span>
+</a>
+</div>
+</div>
+<div>
+<h5 class="font-label-mono text-label-mono text-text-high-contrast uppercase mb-8">Services</h5>
+<ul class="space-y-4 font-body-sm text-body-sm text-text-muted">
+<li><a class="hover:text-primary-container transition-colors" href="#">Mobile Development</a></li>
+<li><a class="hover:text-primary-container transition-colors" href="#">Web Architecture</a></li>
+<li><a class="hover:text-primary-container transition-colors" href="#">AI Engineering</a></li>
+<li><a class="hover:text-primary-container transition-colors" href="#">Cloud Systems</a></li>
+</ul>
+</div>
+<div>
+<h5 class="font-label-mono text-label-mono text-text-high-contrast uppercase mb-8">Studio</h5>
+<ul class="space-y-4 font-body-sm text-body-sm text-text-muted">
+<li><a class="hover:text-primary-container transition-colors" href="#">Our Portfolio</a></li>
+<li><a class="hover:text-primary-container transition-colors" href="#">Design Process</a></li>
+<li><a class="hover:text-primary-container transition-colors" href="#">Careers</a></li>
+<li><a class="hover:text-primary-container transition-colors" href="#">Contact</a></li>
+</ul>
+</div>
+<div>
+<h5 class="font-label-mono text-label-mono text-text-high-contrast uppercase mb-8">Legal</h5>
+<ul class="space-y-4 font-body-sm text-body-sm text-text-muted">
+<li><a class="hover:text-primary-container transition-colors" href="#">Privacy Policy</a></li>
+<li><a class="hover:text-primary-container transition-colors" href="#">Terms of Service</a></li>
+<li><a class="hover:text-primary-container transition-colors" href="#">Cookie Policy</a></li>
+</ul>
+</div>
+</div>
+<div class="px-gutter py-8 border-t border-border-subtle max-w-container-max mx-auto flex flex-col md:flex-row justify-between items-center text-text-muted font-body-sm text-body-sm">
+<span>© 2024 MISTER CODERZ. Engineering as Art.</span>
+<div class="mt-4 md:mt-0 flex gap-6">
+<span>Built with Next.js &amp; TailWind</span>
+<span>Deploy Status: <span class="text-primary-container">Optimal</span></span>
+</div>
+</div>
+</footer>
+<script>
+        // Micro-interactions for cards
+        document.querySelectorAll('.service-card').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.style.transform = 'translateY(-4px)';
+                card.style.borderColor = 'rgba(255, 107, 0, 0.4)';
+                card.style.transition = 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)';
+            });
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'translateY(0)';
+                card.style.borderColor = '#262626';
+            });
+        });
+    </script>
+</body></html>

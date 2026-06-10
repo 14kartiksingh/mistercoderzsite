@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>About | MISTER CODERZ</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        body {
+            background-color: #0A0A0A;
+            color: #e5e2e1;
+            overflow-x: hidden;
+        }
+        .glass-panel {
+            background: rgba(20, 20, 20, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        .text-glow-orange {
+            text-shadow: 0 0 20px rgba(255, 107, 0, 0.3);
+        }
+        .mask-fade-bottom {
+            mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-tertiary-fixed-variant": "#00497b",
+                      "on-secondary-container": "#6f5c00",
+                      "on-error": "#690005",
+                      "surface-base": "#0A0A0A",
+                      "on-secondary-fixed-variant": "#544600",
+                      "inverse-on-surface": "#313030",
+                      "on-secondary-fixed": "#221b00",
+                      "on-tertiary-container": "#003357",
+                      "surface-bright": "#3a3939",
+                      "primary": "#ffb693",
+                      "primary-container": "#ff6b00",
+                      "text-high-contrast": "#FFFFFF",
+                      "on-secondary": "#3a3000",
+                      "on-tertiary": "#003257",
+                      "secondary-fixed-dim": "#e9c400",
+                      "on-surface-variant": "#e2bfb0",
+                      "tertiary-fixed": "#d0e4ff",
+                      "on-primary": "#561f00",
+                      "surface": "#131313",
+                      "surface-container": "#201f1f",
+                      "on-error-container": "#ffdad6",
+                      "tertiary-fixed-dim": "#9ccaff",
+                      "on-surface": "#e5e2e1",
+                      "surface-container-lowest": "#0e0e0e",
+                      "inverse-surface": "#e5e2e1",
+                      "text-muted": "#A1A1AA",
+                      "surface-dim": "#131313",
+                      "on-background": "#e5e2e1",
+                      "outline": "#a98a7d",
+                      "surface-elevated": "#141414",
+                      "on-primary-container": "#572000",
+                      "secondary-fixed": "#ffe170",
+                      "background": "#131313",
+                      "inverse-primary": "#a04100",
+                      "on-tertiary-fixed": "#001d35",
+                      "primary-fixed": "#ffdbcc",
+                      "tertiary": "#9ccaff",
+                      "surface-tint": "#ffb693",
+                      "surface-variant": "#353534",
+                      "primary-fixed-dim": "#ffb693",
+                      "secondary": "#fff3d2",
+                      "surface-container-low": "#1c1b1b",
+                      "surface-container-high": "#2a2a2a",
+                      "on-primary-fixed": "#351000",
+                      "error-container": "#93000a",
+                      "surface-container-highest": "#353534",
+                      "tertiary-container": "#059eff",
+                      "secondary-container": "#fdd400",
+                      "error": "#ffb4ab",
+                      "outline-variant": "#5a4136",
+                      "on-primary-fixed-variant": "#7a3000",
+                      "border-subtle": "#262626"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "base": "8px",
+                      "section-gap": "80px",
+                      "margin-mobile": "16px",
+                      "gutter": "24px",
+                      "container-max": "1280px"
+              },
+              "fontFamily": {
+                      "headline-sm": ["Inter"],
+                      "label-mono": ["JetBrains Mono"],
+                      "body-sm": ["Inter"],
+                      "body-md": ["Inter"],
+                      "display-xl": ["Inter"],
+                      "headline-lg": ["Inter"],
+                      "display-xl-mobile": ["Inter"]
+              },
+              "fontSize": {
+                      "headline-sm": ["24px", {"lineHeight": "1.3", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                      "label-mono": ["12px", {"lineHeight": "1.5", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                      "body-sm": ["14px", {"lineHeight": "1.5", "letterSpacing": "0em", "fontWeight": "400"}],
+                      "body-md": ["16px", {"lineHeight": "1.6", "letterSpacing": "0em", "fontWeight": "400"}],
+                      "display-xl": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "700"}],
+                      "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                      "display-xl-mobile": ["40px", {"lineHeight": "1.1", "letterSpacing": "-0.03em", "fontWeight": "700"}]
+              }
+            },
+          },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-surface-base selection:bg-primary-container/30 selection:text-primary">
+<!-- Header: TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-background/70 backdrop-blur-xl border-b border-border-subtle">
+<nav class="flex justify-between items-center max-w-container-max mx-auto px-margin-mobile md:px-gutter h-20">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary" data-icon="terminal">terminal</span>
+<span class="font-headline-sm text-headline-sm font-bold tracking-tighter text-text-high-contrast">MISTER CODERZ</span>
+</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="font-label-mono text-label-mono uppercase tracking-widest text-text-muted hover:text-text-high-contrast transition-colors" href="#">Products</a>
+<a class="font-label-mono text-label-mono uppercase tracking-widest text-text-muted hover:text-text-high-contrast transition-colors" href="#">Services</a>
+<a class="font-label-mono text-label-mono uppercase tracking-widest text-primary border-b border-primary" href="#">About</a>
+<a class="font-label-mono text-label-mono uppercase tracking-widest text-text-muted hover:text-text-high-contrast transition-colors" href="#">Labs</a>
+</div>
+<button class="bg-primary-container text-text-high-contrast px-6 py-2 font-label-mono text-label-mono uppercase tracking-widest hover:bg-surface-elevated/50 transition-all duration-300 active:scale-95">Contact</button>
+</nav>
+</header>
+<main class="pt-20">
+<!-- Hero Section -->
+<section class="relative min-h-[795px] flex flex-col items-center justify-center text-center px-margin-mobile md:px-gutter overflow-hidden">
+<div class="absolute inset-0 z-0">
+
+</div>
+<div class="relative z-10 max-w-4xl">
+<div class="inline-block px-3 py-1 mb-8 border border-primary/20 bg-primary/5 rounded-full">
+<span class="font-label-mono text-label-mono text-primary uppercase tracking-[0.2em]">Independent Tech Studio</span>
+</div>
+<h1 class="font-display-xl text-display-xl-mobile md:text-display-xl text-text-high-contrast mb-8 leading-tight tracking-tighter">
+                    Engineering <span class="text-primary italic">as Art</span>
+</h1>
+<p class="font-body-md text-body-md text-text-muted max-w-2xl mx-auto leading-relaxed">
+                    MISTER CODERZ is a laboratory of precision, where high-fidelity engineering meets artistic discipline. We build digital artifacts that stand at the intersection of utility and beauty.
+                </p>
+</div>
+<div class="absolute bottom-12 left-1/2 -translate-x-1/2 animate-bounce">
+<span class="material-symbols-outlined text-text-muted" data-icon="keyboard_double_arrow_down">keyboard_double_arrow_down</span>
+</div>
+</section>
+<!-- Mission & Vision -->
+<section class="py-section-gap max-w-container-max mx-auto px-margin-mobile md:px-gutter grid md:grid-cols-2 gap-gutter">
+<div class="p-8 md:p-12 border border-border-subtle bg-surface-elevated">
+<span class="font-label-mono text-label-mono text-secondary-container uppercase tracking-widest block mb-4">Mission</span>
+<h2 class="font-headline-lg text-headline-lg text-text-high-contrast mb-6">Manifesting Excellence</h2>
+<p class="font-body-md text-body-md text-text-muted leading-relaxed">
+                    To architect software that transcends mere function, elevating the digital experience through rigorous craftsmanship and an uncompromising commitment to performance.
+                </p>
+</div>
+<div class="p-8 md:p-12 border border-border-subtle bg-surface-elevated">
+<span class="font-label-mono text-label-mono text-secondary-container uppercase tracking-widest block mb-4">Vision</span>
+<h2 class="font-headline-lg text-headline-lg text-text-high-contrast mb-6">The Future Frontier</h2>
+<p class="font-body-md text-body-md text-text-muted leading-relaxed">
+                    We envision a digital landscape where technology is invisible and intent is seamless—a world where every interaction is an effortless extension of human capability.
+                </p>
+</div>
+</section>
+<!-- Core Principles: Bento Grid -->
+<section class="py-section-gap max-w-container-max mx-auto px-margin-mobile md:px-gutter">
+<div class="text-center mb-16">
+<h2 class="font-headline-lg text-headline-lg text-text-high-contrast mb-4">Core Principles</h2>
+<div class="h-1 w-20 bg-primary-container mx-auto"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+<!-- Principle: Craftsmanship -->
+<div class="md:col-span-2 group p-8 border border-border-subtle bg-surface-elevated hover:border-primary/50 transition-all duration-500 overflow-hidden relative">
+<div class="relative z-10">
+<span class="material-symbols-outlined text-primary mb-6 block text-4xl" data-icon="architecture">architecture</span>
+<h3 class="font-headline-sm text-headline-sm text-text-high-contrast mb-4">Craftsmanship</h3>
+<p class="font-body-sm text-body-sm text-text-muted leading-relaxed">
+                            Precision in every line of code. We treat software architecture as a master craftsman treats fine timber—with respect for the material and focus on the final grain.
+                        </p>
+</div>
+<div class="absolute -bottom-8 -right-8 opacity-5 group-hover:opacity-10 transition-opacity">
+<span class="material-symbols-outlined text-[160px]" data-icon="token">token</span>
+</div>
+</div>
+<!-- Principle: Innovation -->
+<div class="group p-8 border border-border-subtle bg-surface-elevated hover:border-primary/50 transition-all duration-500 overflow-hidden relative">
+<div class="relative z-10">
+<span class="material-symbols-outlined text-primary mb-6 block text-4xl" data-icon="temp_preferences_custom">temp_preferences_custom</span>
+<h3 class="font-headline-sm text-headline-sm text-text-high-contrast mb-4">Innovation</h3>
+<p class="font-body-sm text-body-sm text-text-muted leading-relaxed">
+                            Constant experimentation with AI and emerging tech to redefine the limits.
+                        </p>
+</div>
+</div>
+<!-- Principle: Reliability -->
+<div class="group p-8 border border-border-subtle bg-surface-elevated hover:border-primary/50 transition-all duration-500 overflow-hidden relative">
+<div class="relative z-10">
+<span class="material-symbols-outlined text-primary mb-6 block text-4xl" data-icon="verified_user">verified_user</span>
+<h3 class="font-headline-sm text-headline-sm text-text-high-contrast mb-4">Reliability</h3>
+<p class="font-body-sm text-body-sm text-text-muted leading-relaxed">
+                            Systems built for 99.99% uptime and bulletproof performance.
+                        </p>
+</div>
+</div>
+<!-- Principle: Simplicity -->
+<div class="md:col-span-4 group p-10 border border-border-subtle bg-surface-elevated hover:border-primary/50 transition-all duration-500 relative">
+<div class="flex flex-col md:flex-row items-center gap-12">
+<div class="flex-1">
+<h3 class="font-headline-lg text-headline-lg text-text-high-contrast mb-4">Simplicity</h3>
+<p class="font-body-md text-body-md text-text-muted leading-relaxed">
+                                Elegant solutions to complex problems. We believe that true sophistication lies in the removal of the unnecessary, leaving only the essential core of the product.
+                            </p>
+</div>
+<div class="flex-none w-full md:w-1/3 aspect-video bg-surface-container-high border border-border-subtle flex items-center justify-center">
+<div class="w-16 h-16 border-2 border-primary/20 rounded-full flex items-center justify-center animate-pulse">
+<div class="w-8 h-8 border-2 border-primary rounded-full"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Studio Philosophy -->
+<section class="py-section-gap bg-surface-container-lowest">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-gutter">
+<div class="flex flex-col lg:flex-row gap-section-gap items-center">
+<div class="lg:w-1/2">
+<img alt="Modern Studio Architecture" class="w-full grayscale brightness-75 border border-border-subtle" data-alt="A cinematic, wide-angle interior photograph of a minimalist architectural studio at dusk. The space features raw concrete walls, massive glass windows overlooking a dark cityscape, and long black workstations with precision lighting. The overall mood is cold, technical, and highly sophisticated, using deep blacks and subtle orange light accents to reflect the studio's technical authority." src="https://lh3.googleusercontent.com/aida-public/AB6AXuByuptQ7pqq-eCG--ApIyQNV-EUgjuABLPBA0sc8xEvsJhOB3h2QY26BZKhNaYSMXz1-IJGkwUH6FaSW3dAYte6BXRLdQE8xsR0dMuoNgRRMi9Vw9OTNe2tqRoVCpCLhGFIfMLGOlQ7hzWwUIPm6nUuysH2LPZEWBhXTbfxraXMDu1AyjOcRgAfk9AiFDmeU1AOlRKTvYff9wTu4UPrMr8MSjWQF21JzehAoVVvLGNEmhCG-juzgQMwO7Wxmpx427ewErkMiIcA1h1n"/>
+</div>
+<div class="lg:w-1/2">
+<span class="font-label-mono text-label-mono text-primary uppercase tracking-[0.2em] mb-4 block">Philosophy</span>
+<h2 class="font-headline-lg text-headline-lg text-text-high-contrast mb-8">Quality Over Volume</h2>
+<div class="space-y-6 font-body-md text-body-md text-text-muted leading-relaxed">
+<p>
+                                MISTER CODERZ does not scale for the sake of scaling. We are an independent studio by design, allowing us to maintain a sovereign focus on the projects that demand high-fidelity execution.
+                            </p>
+<p>
+                                We partner with a selective group of founders and startups who value the long-term compounding of a well-built brand and a robust technical foundation. To us, every project is a signature work.
+                            </p>
+<p>
+                                By removing the noise of traditional agency structures, we operate at the speed of thought, deploying systems that are as resilient as they are aesthetically pleasing.
+                            </p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Timeline -->
+<section class="py-section-gap max-w-container-max mx-auto px-margin-mobile md:px-gutter">
+<div class="text-center mb-16">
+<h2 class="font-headline-lg text-headline-lg text-text-high-contrast mb-4">Studio Evolution</h2>
+<div class="h-1 w-20 bg-primary-container mx-auto"></div>
+</div>
+<div class="relative max-w-3xl mx-auto space-y-16 before:content-[''] before:absolute before:left-0 md:before:left-1/2 before:top-0 before:bottom-0 before:w-px before:bg-border-subtle before:-translate-x-1/2">
+<!-- 2021 -->
+<div class="relative pl-8 md:pl-0">
+<div class="md:w-1/2 md:pr-16 md:text-right">
+<div class="absolute left-0 md:left-1/2 top-0 w-4 h-4 bg-primary rounded-full -translate-x-1/2 z-10 border-4 border-surface-base"></div>
+<span class="font-label-mono text-label-mono text-primary mb-2 block">2021</span>
+<h4 class="font-headline-sm text-headline-sm text-text-high-contrast mb-2">The Genesis Lab</h4>
+<p class="font-body-sm text-body-sm text-text-muted">Founded as a research laboratory focusing on decentralized systems and edge computing architectures.</p>
+</div>
+</div>
+<!-- 2022 -->
+<div class="relative pl-8 md:pl-0">
+<div class="md:w-1/2 md:ml-auto md:pl-16">
+<div class="absolute left-0 md:left-1/2 top-0 w-4 h-4 bg-primary rounded-full -translate-x-1/2 z-10 border-4 border-surface-base"></div>
+<span class="font-label-mono text-label-mono text-primary mb-2 block">2022</span>
+<h4 class="font-headline-sm text-headline-sm text-text-high-contrast mb-2">First Artifacts</h4>
+<p class="font-body-sm text-body-sm text-text-muted">Shipped the first three enterprise-grade products, establishing our reputation for high-fidelity UI and robust backend systems.</p>
+</div>
+</div>
+<!-- 2023 -->
+<div class="relative pl-8 md:pl-0">
+<div class="md:w-1/2 md:pr-16 md:text-right">
+<div class="absolute left-0 md:left-1/2 top-0 w-4 h-4 bg-primary rounded-full -translate-x-1/2 z-10 border-4 border-surface-base"></div>
+<span class="font-label-mono text-label-mono text-primary mb-2 block">2023</span>
+<h4 class="font-headline-sm text-headline-sm text-text-high-contrast mb-2">Studio Expansion</h4>
+<p class="font-body-sm text-body-sm text-text-muted">Transitioned into a full-scale product studio, partnering with Series A startups to design core digital infrastructure.</p>
+</div>
+</div>
+<!-- 2024 -->
+<div class="relative pl-8 md:pl-0">
+<div class="md:w-1/2 md:ml-auto md:pl-16">
+<div class="absolute left-0 md:left-1/2 top-0 w-4 h-4 bg-primary rounded-full -translate-x-1/2 z-10 border-4 border-surface-base"></div>
+<span class="font-label-mono text-label-mono text-primary mb-2 block">2024</span>
+<h4 class="font-headline-sm text-headline-sm text-text-high-contrast mb-2">Engineering as Art</h4>
+<p class="font-body-sm text-body-sm text-text-muted">Rebranding to reflect our refined focus on the intersection of AI, design systems, and human interaction.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Future Direction -->
+<section class="py-section-gap relative overflow-hidden bg-primary-container text-on-primary-container">
+<div class="absolute inset-0 opacity-10">
+<div class="grid grid-cols-12 h-full w-full">
+<div class="col-span-1 border-r border-on-primary-container/20"></div>
+<div class="col-span-1 border-r border-on-primary-container/20"></div>
+<div class="col-span-1 border-r border-on-primary-container/20"></div>
+<div class="col-span-1 border-r border-on-primary-container/20"></div>
+<div class="col-span-1 border-r border-on-primary-container/20"></div>
+<div class="col-span-1 border-r border-on-primary-container/20"></div>
+<div class="col-span-1 border-r border-on-primary-container/20"></div>
+<div class="col-span-1 border-r border-on-primary-container/20"></div>
+<div class="col-span-1 border-r border-on-primary-container/20"></div>
+<div class="col-span-1 border-r border-on-primary-container/20"></div>
+<div class="col-span-1 border-r border-on-primary-container/20"></div>
+<div class="col-span-1"></div>
+</div>
+</div>
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-gutter relative z-10 text-center">
+<span class="font-label-mono text-label-mono uppercase tracking-[0.3em] mb-6 block">The Next Frontier</span>
+<h2 class="font-display-xl text-display-xl-mobile md:text-display-xl mb-8 leading-tight">Augmented <br class="md:hidden"/>Intelligence</h2>
+<p class="font-body-md text-body-md max-w-2xl mx-auto opacity-90 leading-relaxed mb-12">
+                    We are exploring the next horizon of human-computer interaction, where generative AI doesn't just assist, but enhances the creative and engineering capacity of the human mind.
+                </p>
+<button class="bg-surface-base text-text-high-contrast px-10 py-4 font-label-mono text-label-mono uppercase tracking-widest hover:bg-surface-elevated transition-all active:scale-95 border border-border-subtle">
+                    Join the Journey
+                </button>
+</div>
+</section>
+</main>
+<!-- Footer: Footer -->
+<footer class="bg-surface-base border-t border-border-subtle">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-section-gap max-w-container-max mx-auto px-margin-mobile md:px-gutter py-20">
+<div class="md:col-span-2">
+<div class="flex items-center gap-4 mb-6">
+<span class="material-symbols-outlined text-primary" data-icon="terminal">terminal</span>
+<span class="font-headline-sm text-headline-sm font-bold text-text-high-contrast uppercase tracking-tighter">MISTER CODERZ</span>
+</div>
+<p class="font-body-sm text-body-sm text-text-muted max-w-xs leading-relaxed mb-8">
+                    An independent technology studio focused on the architecture of premium digital experiences. Built with precision, operated with passion.
+                </p>
+<p class="font-body-sm text-body-sm text-text-muted">
+                    © 2024 MISTER CODERZ. Engineering as Art.
+                </p>
+</div>
+<div>
+<h5 class="font-label-mono text-label-mono text-text-high-contrast uppercase tracking-widest mb-6">Studio</h5>
+<ul class="space-y-4">
+<li><a class="font-body-sm text-body-sm text-text-muted hover:text-primary transition-colors" href="#">Products</a></li>
+<li><a class="font-body-sm text-body-sm text-text-muted hover:text-primary transition-colors" href="#">Services</a></li>
+<li><a class="font-body-sm text-body-sm text-text-muted hover:text-primary transition-colors" href="#">Labs</a></li>
+<li><a class="font-body-sm text-body-sm text-text-muted hover:text-primary transition-colors" href="#">Contact</a></li>
+</ul>
+</div>
+<div>
+<h5 class="font-label-mono text-label-mono text-text-high-contrast uppercase tracking-widest mb-6">Connect</h5>
+<ul class="space-y-4">
+<li><a class="font-body-sm text-body-sm text-text-muted hover:text-primary transition-colors" href="#">GitHub</a></li>
+<li><a class="font-body-sm text-body-sm text-text-muted hover:text-primary transition-colors" href="#">Privacy</a></li>
+<li><a class="font-body-sm text-body-sm text-text-muted hover:text-primary transition-colors" href="#">Terms</a></li>
+</ul>
+</div>
+</div>
+</footer>
+<script>
+        // Simple micro-interaction for hero visibility on scroll
+        window.addEventListener('scroll', () => {
+            const scroll = window.scrollY;
+            const hero = document.querySelector('section:first-of-type');
+            if (hero) {
+                const opacity = Math.max(0, 1 - scroll / 600);
+                hero.style.opacity = opacity;
+            }
+        });
+    </script>
+</body></html>

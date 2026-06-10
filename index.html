@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>MISTER CODERZ | Engineering as Art</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@500&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-surface": "#e5e2e1",
+                        "tertiary-container": "#059eff",
+                        "surface-tint": "#ffb693",
+                        "surface-variant": "#353534",
+                        "on-primary": "#561f00",
+                        "secondary": "#fff3d2",
+                        "surface-elevated": "#141414",
+                        "text-muted": "#A1A1AA",
+                        "tertiary-fixed": "#d0e4ff",
+                        "inverse-on-surface": "#313030",
+                        "on-secondary-fixed": "#221b00",
+                        "surface-base": "#0A0A0A",
+                        "on-primary-fixed-variant": "#7a3000",
+                        "surface-container-highest": "#353534",
+                        "on-primary-fixed": "#351000",
+                        "border-subtle": "#262626",
+                        "tertiary": "#9ccaff",
+                        "secondary-fixed": "#ffe170",
+                        "outline-variant": "#5a4136",
+                        "on-tertiary-fixed": "#001d35",
+                        "background": "#131313",
+                        "error-container": "#93000a",
+                        "surface-dim": "#131313",
+                        "primary": "#ffb693",
+                        "on-error": "#690005",
+                        "surface-container-lowest": "#0e0e0e",
+                        "on-secondary-container": "#6f5c00",
+                        "on-secondary": "#3a3000",
+                        "on-tertiary": "#003257",
+                        "text-high-contrast": "#FFFFFF",
+                        "primary-fixed-dim": "#ffb693",
+                        "surface": "#131313",
+                        "on-secondary-fixed-variant": "#544600",
+                        "secondary-container": "#fdd400",
+                        "inverse-primary": "#a04100",
+                        "outline": "#a98a7d",
+                        "surface-container-high": "#2a2a2a",
+                        "on-tertiary-fixed-variant": "#00497b",
+                        "primary-container": "#ff6b00",
+                        "primary-fixed": "#ffdbcc",
+                        "on-background": "#e5e2e1",
+                        "on-tertiary-container": "#003357",
+                        "on-error-container": "#ffdad6",
+                        "tertiary-fixed-dim": "#9ccaff",
+                        "surface-bright": "#3a3939",
+                        "surface-container": "#201f1f",
+                        "surface-container-low": "#1c1b1b",
+                        "secondary-fixed-dim": "#e9c400",
+                        "on-surface-variant": "#e2bfb0",
+                        "error": "#ffb4ab",
+                        "inverse-surface": "#e5e2e1",
+                        "on-primary-container": "#572000"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "section-gap": "80px",
+                        "base": "8px",
+                        "gutter": "24px",
+                        "container-max": "1280px",
+                        "margin-mobile": "16px"
+                    },
+                    "fontFamily": {
+                        "display-xl-mobile": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "display-xl": ["Inter"],
+                        "headline-sm": ["Inter"],
+                        "body-md": ["Inter"],
+                        "body-sm": ["Inter"],
+                        "label-mono": ["JetBrains Mono"]
+                    },
+                    "fontSize": {
+                        "display-xl-mobile": ["40px", { "lineHeight": "1.1", "letterSpacing": "-0.03em", "fontWeight": "700" }],
+                        "headline-lg": ["32px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+                        "display-xl": ["64px", { "lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "700" }],
+                        "headline-sm": ["24px", { "lineHeight": "1.3", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "letterSpacing": "0em", "fontWeight": "400" }],
+                        "body-sm": ["14px", { "lineHeight": "1.5", "letterSpacing": "0em", "fontWeight": "400" }],
+                        "label-mono": ["12px", { "lineHeight": "1.5", "letterSpacing": "0.05em", "fontWeight": "500" }]
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            background-color: #0A0A0A;
+            color: #e5e2e1;
+            scroll-behavior: smooth;
+        }
+
+        .glass-nav {
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+
+        .bento-card {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .bento-card:hover {
+            border-color: #ff6b00;
+            background-color: #141414;
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        .custom-cursor {
+            width: 20px;
+            height: 20px;
+            border: 1px solid #ff6b00;
+            border-radius: 50%;
+            position: fixed;
+            pointer-events: none;
+            z-index: 9999;
+            transition: transform 0.1s ease;
+        }
+    </style>
+    <style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+</head>
+
+<body class="selection:bg-primary-container selection:text-white">
+    <!-- TopAppBar from JSON -->
+    <header class="fixed top-0 w-full z-50 bg-background/70 backdrop-blur-xl border-b border-border-subtle">
+        <div class="flex justify-between items-center max-w-container-max mx-auto px-margin-mobile md:px-gutter h-20">
+            <div class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-primary" data-icon="terminal">terminal</span>
+                <span
+                    class="font-headline-sm text-headline-sm font-bold tracking-tighter text-text-high-contrast">MISTER
+                    CODERZ</span>
+            </div>
+            <nav class="hidden md:flex items-center gap-8">
+                <a class="font-label-mono text-label-mono uppercase tracking-widest text-primary border-b border-primary"
+                    href="index.html">Home</a>
+                <a class="font-label-mono text-label-mono uppercase tracking-widest text-text-muted hover:text-text-high-contrast transition-colors"
+                    href="products.html">Products</a>
+                <a class="font-label-mono text-label-mono uppercase tracking-widest text-text-muted hover:text-text-high-contrast transition-colors"
+                    href="labs.html">Labs</a>
+                <a class="font-label-mono text-label-mono uppercase tracking-widest text-text-muted hover:text-text-high-contrast transition-colors"
+                    href="services.html">Services</a>
+                <a class="font-label-mono text-label-mono uppercase tracking-widest text-text-muted hover:text-text-high-contrast transition-colors"
+                    href="about.html">About</a>
+            </nav>
+            <a href="contact.html"
+                class="bg-primary-container text-on-primary-container px-6 py-2 font-label-mono text-label-mono uppercase tracking-widest active:scale-95 transition-transform hover:bg-surface-elevated/50 inline-block">
+                Contact
+            </a>
+        </div>
+    </header>
+    <main class="pt-20">
+        <!-- Hero Section -->
+        <section
+            class="relative min-h-[795px] flex flex-col items-center justify-center text-center px-margin-mobile overflow-hidden">
+            <div class="absolute inset-0 z-0">
+
+            </div>
+            <div class="relative z-10 max-w-4xl">
+                <div
+                    class="inline-flex items-center gap-2 px-3 py-1 bg-surface-elevated border border-border-subtle rounded-full mb-8">
+                    <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+                    <span class="font-label-mono text-label-mono uppercase text-text-muted">PRODUCT STUDIO • INNOVATION
+                        LAB</span>
+                </div>
+                <h1
+                    class="font-display-xl-mobile md:font-display-xl text-display-xl-mobile md:text-display-xl text-text-high-contrast mb-6 leading-tight">
+                    MISTER CODERZ: <span class="text-primary">Building Apps,</span> AI Tools, and Digital Products.
+                </h1>
+                <p class="font-body-md text-body-md text-text-muted mb-10 max-w-2xl mx-auto">
+                    An independent product and technology studio creating software, AI-powered solutions, and digital
+                    experiences that bridge the gap between imagination and engineering.
+                </p>
+                <div class="flex flex-col md:flex-row gap-4 justify-center">
+                    <button onclick="window.location.href='products.html'"
+                        class="bg-primary-container text-on-primary-container px-10 py-4 font-label-mono text-label-mono uppercase tracking-widest hover:brightness-110 transition-all active:scale-95">
+                        Explore Products
+                    </button>
+                    <button onclick="window.location.href='contact.html'"
+                        class="border border-border-subtle text-text-high-contrast px-10 py-4 font-label-mono text-label-mono uppercase tracking-widest hover:bg-surface-elevated transition-all active:scale-95">
+                        Work With Us
+                    </button>
+                </div>
+            </div>
+        </section>
+        <!-- What We Do -->
+        <section class="py-section-gap px-margin-mobile md:px-gutter max-w-container-max mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-4">
+                <div>
+                    <span
+                        class="font-label-mono text-label-mono text-primary uppercase tracking-widest mb-4 block">Capabilites</span>
+                    <h2 class="font-headline-lg text-headline-lg text-text-high-contrast">What We Do</h2>
+                </div>
+                <p class="font-body-sm text-body-sm text-text-muted max-w-sm">We specialize in shipping high-fidelity
+                    digital infrastructure for modern enterprises and forward-thinking startups.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div
+                    class="bento-card p-10 bg-surface-container-lowest border border-border-subtle relative overflow-hidden group">
+                    <span class="material-symbols-outlined text-4xl text-primary mb-8"
+                        data-icon="smartphone">smartphone</span>
+                    <h3 class="font-headline-sm text-headline-sm text-text-high-contrast mb-4">Mobile Applications</h3>
+                    <p class="font-body-sm text-body-sm text-text-muted">High-performance iOS and Android experiences
+                        built with Flutter and React Native, focused on seamless UX and native-grade speed.</p>
+                </div>
+                <div
+                    class="bento-card p-10 bg-surface-container-lowest border border-border-subtle relative overflow-hidden group">
+                    <div
+                        class="absolute -right-10 -top-10 w-40 h-40 bg-primary/5 rounded-full blur-3xl group-hover:bg-primary/10 transition-all">
+                    </div>
+                    <span class="material-symbols-outlined text-4xl text-primary mb-8"
+                        data-icon="psychology">psychology</span>
+                    <h3 class="font-headline-sm text-headline-sm text-text-high-contrast mb-4">AI Solutions</h3>
+                    <p class="font-body-sm text-body-sm text-text-muted">Custom LLM integrations, predictive analytics,
+                        and automated decision engines that transform raw data into competitive advantages.</p>
+                </div>
+                <div
+                    class="bento-card p-10 bg-surface-container-lowest border border-border-subtle relative overflow-hidden group">
+                    <span class="material-symbols-outlined text-4xl text-primary mb-8"
+                        data-icon="cloud_done">cloud_done</span>
+                    <h3 class="font-headline-sm text-headline-sm text-text-high-contrast mb-4">Web Platforms</h3>
+                    <p class="font-body-sm text-body-sm text-text-muted">Robust, scalable web architectures using
+                        Next.js and Go, designed for heavy traffic and mission-critical reliability.</p>
+                </div>
+            </div>
+        </section>
+        <!-- Featured Products -->
+        <section class="py-section-gap bg-surface-base">
+            <div class="max-w-container-max mx-auto px-margin-mobile md:px-gutter">
+                <div class="mb-16">
+                    <span
+                        class="font-label-mono text-label-mono text-primary uppercase tracking-widest mb-4 block">Portfolio</span>
+                    <h2 class="font-headline-lg text-headline-lg text-text-high-contrast">Featured Products</h2>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                    <div class="group">
+                        <div
+                            class="aspect-video bg-surface-container-high border border-border-subtle mb-6 overflow-hidden relative">
+                            <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                                data-alt="A high-contrast digital interface of an AI-powered productivity app called MindRush. The UI features sleek dark glassmorphism elements, vibrant orange accents, and complex data visualizations. The setting is a professional workspace illuminated by cool blue and warm orange ambient lights, creating a sophisticated and energetic atmosphere for modern software development."
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDBrz2AgvLAzQJCyhePRodJrzJmf7O7BhH9-6NE72JOmPKLlCi8m47bLRmSmS_OJ_YUxT9i6csgVKDAZehe6E32cCoxIf41hET2sHoklm3UCEF1g9izMzDwJnSk1RNWr4f4ysZeIF9sHyxGPZP19B2a5CsQJ_OX-TTfd7FP0-YmyPDO7DgPkFoJDdxwE7jXGW4SQM5jKcfHD4AcELF4YJTlwc_dRg2EHg06iiTRdrG0PseepZzcA2g8dqXNE01pA9_a2porJhXbgVe_" />
+                            <div class="absolute top-4 left-4">
+                                <span
+                                    class="bg-primary-container text-on-primary-container font-label-mono text-[10px] px-3 py-1 uppercase tracking-tighter">Live
+                                    v1.0</span>
+                            </div>
+                        </div>
+                        <h3 class="font-headline-sm text-headline-sm text-text-high-contrast mb-2">MindRush</h3>
+                        <p class="font-body-sm text-body-sm text-text-muted mb-6">A cognitive-first productivity engine
+                            that uses AI to map your workflow patterns and optimize focus sessions.</p>
+                        <button onclick="window.location.href='error404.html'"
+                            class="inline-flex items-center gap-2 font-label-mono text-label-mono text-primary uppercase tracking-widest hover:gap-4 transition-all">
+                            View Product <span class="material-symbols-outlined text-sm"
+                                data-icon="arrow_forward">arrow_forward</span>
+                        </button>
+                    </div>
+                    <div class="group">
+                        <div
+                            class="aspect-video bg-surface-container-high border border-border-subtle mb-6 overflow-hidden relative">
+                            <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                                data-alt="An advanced AI educational tool interface for checking exams. The screen displays scanned test papers with intelligent highlights and automated grading annotations in a sharp, minimalist dark theme. The lighting is crisp and surgical, emphasizing the accuracy and technical depth of the software, with a palette dominated by charcoal, silver, and subtle primary orange highlights."
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDRhuKkdg4j1ahmolwvSegjD2UuxHwYwzsqexX1u2M2ZoIsc_4jHcZy31PwmGyUNIVBH-kbzl6IBV7Fr6rjN5uZD-za5B9qKGsiadQcG63AdqAw40zzgTjRjoSSG0_Injhr6NYCzkklYqz1Ou40fpig40OEKZLowd43MjbFvHny7vCwuoBxDSB-hpRfazhNucYAvjHMrZ4rFVvVAbuCCxtYTZGX4RepDXbEq7oAchOSSchFqZM0L6O8pQ_TBaU1yVxiSf01IuC6rs8I" />
+                            <div class="absolute top-4 left-4">
+                                <span
+                                    class="bg-surface-variant text-on-surface font-label-mono text-[10px] px-3 py-1 uppercase tracking-tighter">Beta
+                                    Access</span>
+                            </div>
+                        </div>
+                        <h3 class="font-headline-sm text-headline-sm text-text-high-contrast mb-2">AI Exam Checker</h3>
+                        <p class="font-body-sm text-body-sm text-text-muted mb-6">Automated assessment platform for
+                            educators, capable of grading complex handwritten responses with 99.2% accuracy.</p>
+                        <button onclick="window.location.href='error404.html'"
+                            class="inline-flex items-center gap-2 font-label-mono text-label-mono text-primary uppercase tracking-widest hover:gap-4 transition-all">
+                            View Product <span class="material-symbols-outlined text-sm"
+                                data-icon="arrow_forward">arrow_forward</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Labs -->
+        <section class="py-section-gap overflow-hidden">
+            <div class="max-w-container-max mx-auto px-margin-mobile md:px-gutter">
+                <div class="flex flex-col md:flex-row gap-12 items-center">
+                    <div class="md:w-1/2">
+                        <span
+                            class="font-label-mono text-label-mono text-primary uppercase tracking-widest mb-4 block">MISTER
+                            CODERZ Labs</span>
+                        <h2 class="font-headline-lg text-headline-lg text-text-high-contrast mb-6">Where Code Meets
+                            Curiosity</h2>
+                        <p class="font-body-md text-body-md text-text-muted mb-8">Labs is our internal R&amp;D division
+                            dedicated to experimental software that pushes technical boundaries. From neural interfaces
+                            to autonomous agents, we build the future before it becomes a requirement.</p>
+                        <div class="space-y-4">
+                            <div
+                                class="p-6 bg-surface-container-low border border-border-subtle flex items-start gap-4">
+                                <div
+                                    class="w-10 h-10 shrink-0 bg-primary/10 flex items-center justify-center border border-primary/20">
+                                    <span class="material-symbols-outlined text-primary"
+                                        data-icon="person_search">person_search</span>
+                                </div>
+                                <div>
+                                    <h4 class="font-headline-sm text-[18px] text-text-high-contrast">AI Digital Twin
+                                    </h4>
+                                    <p class="font-body-sm text-body-sm text-text-muted">Simulating human
+                                        decision-making patterns in high-frequency trading environments.</p>
+                                </div>
+                            </div>
+                            <div
+                                class="p-6 bg-surface-container-low border border-border-subtle flex items-start gap-4">
+                                <div
+                                    class="w-10 h-10 shrink-0 bg-primary/10 flex items-center justify-center border border-primary/20">
+                                    <span class="material-symbols-outlined text-primary"
+                                        data-icon="monitoring">monitoring</span>
+                                </div>
+                                <div>
+                                    <h4 class="font-headline-sm text-[18px] text-text-high-contrast">CodeStalker AI</h4>
+                                    <p class="font-body-sm text-body-sm text-text-muted">A persistent agent that
+                                        monitors global repository changes to predict emerging tech stack trends.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="md:w-1/2 w-full h-[500px] relative">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-tr from-primary/20 to-transparent z-10 pointer-events-none">
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Work With Us -->
+        <section class="py-section-gap bg-surface-container-lowest border-y border-border-subtle">
+            <div class="max-w-container-max mx-auto px-margin-mobile md:px-gutter text-center">
+                <h2 class="font-headline-lg text-headline-lg text-text-high-contrast mb-8">Work With Us</h2>
+                <p class="font-body-md text-body-md text-text-muted mb-12 max-w-2xl mx-auto">
+                    We partner with select founders and organizations to build custom software, internal tools, and
+                    automation systems that operate with mathematical precision.
+                </p>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-16">
+                    <div class="p-8 border border-border-subtle bg-surface-base">
+                        <span class="font-display-xl-mobile text-display-xl-mobile text-primary block mb-2">12+</span>
+                        <span class="font-label-mono text-label-mono uppercase text-text-muted">Products Shipped</span>
+                    </div>
+                    <div class="p-8 border border-border-subtle bg-surface-base">
+                        <span class="font-display-xl-mobile text-display-xl-mobile text-primary block mb-2">99%</span>
+                        <span class="font-label-mono text-label-mono uppercase text-text-muted">System Uptime</span>
+                    </div>
+                    <div class="p-8 border border-border-subtle bg-surface-base">
+                        <span class="font-display-xl-mobile text-display-xl-mobile text-primary block mb-2">1k+</span>
+                        <span class="font-label-mono text-label-mono uppercase text-text-muted">Git Commits</span>
+                    </div>
+                    <div class="p-8 border border-border-subtle bg-surface-base">
+                        <span class="font-display-xl-mobile text-display-xl-mobile text-primary block mb-2">24/7</span>
+                        <span class="font-label-mono text-label-mono uppercase text-text-muted">Active Support</span>
+                    </div>
+                </div>
+                <button onclick="window.location.href='contact.html'"
+                    class="bg-primary-container text-on-primary-container px-12 py-5 font-label-mono text-label-mono uppercase tracking-widest hover:brightness-110 transition-all active:scale-95">
+                    Start a Conversation
+                </button>
+            </div>
+        </section>
+        <!-- About -->
+        <section class="py-section-gap max-w-container-max mx-auto px-margin-mobile md:px-gutter">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
+                <div class="md:col-span-7">
+                    <h2 class="font-headline-lg text-headline-lg text-text-high-contrast mb-8">Engineering as Art</h2>
+                    <p class="font-body-md text-body-md text-text-high-contrast mb-6 leading-relaxed">
+                        MISTER CODERZ was founded on a simple principle: software should be as beautiful on the inside
+                        as it is on the outside. We treat every line of code as a brushstroke and every architecture as
+                        a blueprint for the future.
+                    </p>
+                    <p class="font-body-md text-body-md text-text-muted leading-relaxed">
+                        We don't just build features; we build products. Our team of multidisciplinary engineers and
+                        designers work in tight feedback loops to ensure that every pixel and every packet is optimized
+                        for the end-user experience. From conceptualization to deployment, we are your tactical partners
+                        in digital transformation.
+                    </p>
+                </div>
+                <div
+                    class="md:col-span-5 aspect-square bg-surface-elevated border border-border-subtle relative group overflow-hidden">
+                    <img class="w-full h-full object-cover grayscale opacity-50 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-1000"
+                        data-alt="A macro shot of highly advanced computer hardware circuitry with glowing orange paths of light representing data flow. The aesthetic is extremely clean, modern, and dark, capturing the studio's technical authority. The lighting creates a sense of depth and intricate craftsmanship, with sharp focus on the central processing unit and soft bokeh on the surrounding electronic components."
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuBVCxiniwx1Vd0PZS3JxERhyoyzVCYPx7ejxi7qSQbq9P3hihegFb7cvuZda1327rUiZU7snmbmSGk5gu9FGKfQQ2VS9TX0yT7IDH4CGXG0yAI_FyjUxGejW2ydoBWgL65pptZc7f-bUdlAxlKZE2wgBJ29uon7UttXoBvE78U5t7e2ZVVy16mGFiD5NPgke5Wv099IS8H_VFj_4mLKD8iQdDQRx1i_lbZvjjtNdBy7qRVIi3ts2FpVWDe8YumAb0UnVFt-NYUmTSZG" />
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- Footer from JSON -->
+    <footer class="bg-surface-base border-t border-border-subtle">
+        <div
+            class="grid grid-cols-1 md:grid-cols-4 gap-section-gap max-w-container-max mx-auto px-margin-mobile md:px-gutter py-20">
+            <div class="md:col-span-2">
+                <div class="flex items-center gap-2 mb-6">
+                    <span class="material-symbols-outlined text-primary" data-icon="terminal">terminal</span>
+                    <span class="font-headline-sm text-headline-sm font-bold text-text-high-contrast">MISTER
+                        CODERZ</span>
+                </div>
+                <p class="font-body-sm text-body-sm text-text-muted max-w-xs mb-8">
+                    An independent product and technology studio. Engineering as Art.
+                </p>
+                <p class="font-body-sm text-body-sm text-text-muted">
+                    © 2026 MISTER CODERZ. Engineering as Art.
+                </p>
+            </div>
+            <div>
+                <h5 class="font-label-mono text-label-mono uppercase text-primary mb-6">Explore</h5>
+                <ul class="space-y-4">
+                    <li><a class="font-body-sm text-body-sm text-text-muted hover:text-text-high-contrast transition-colors"
+                            href="products.html">Products</a></li>
+                    <li><a class="font-body-sm text-body-sm text-text-muted hover:text-text-high-contrast transition-colors"
+                            href="services.html">Services</a></li>
+                    <li><a class="font-body-sm text-body-sm text-text-muted hover:text-text-high-contrast transition-colors"
+                            href="labs.html">Labs</a></li>
+                    <li><a class="font-body-sm text-body-sm text-text-muted hover:text-text-high-contrast transition-colors"
+                            href="https://github.com/14kartiksingh">GitHub</a></li>
+                </ul>
+            </div>
+            <div>
+                <h5 class="font-label-mono text-label-mono uppercase text-primary mb-6">Legal</h5>
+                <ul class="space-y-4">
+                    <li><a class="font-body-sm text-body-sm text-text-muted hover:text-text-high-contrast transition-colors"
+                            href="#">Privacy</a></li>
+                    <li><a class="font-body-sm text-body-sm text-text-muted hover:text-text-high-contrast transition-colors"
+                            href="#">Terms</a></li>
+                    <li><a class="font-body-sm text-body-sm text-text-muted hover:text-text-high-contrast transition-colors"
+                            href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+    <div class="custom-cursor hidden md:block" id="cursor"></div>
+    <script>
+        const cursor = document.getElementById('cursor');
+        document.addEventListener('mousemove', (e) => {
+            cursor.style.transform = `translate(${e.clientX - 10}px, ${e.clientY - 10}px)`;
+        });
+
+        document.querySelectorAll('a, button').forEach(el => {
+            el.addEventListener('mouseenter', () => cursor.style.transform += ' scale(2)');
+            el.addEventListener('mouseleave', () => cursor.style.transform = cursor.style.transform.replace(' scale(2)', ''));
+        });
+    </script>
+</body>
+
+</html>

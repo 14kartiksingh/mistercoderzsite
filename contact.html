@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Contact | MISTER CODERZ</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-surface": "#e5e2e1",
+                        "tertiary-container": "#059eff",
+                        "surface-tint": "#ffb693",
+                        "surface-variant": "#353534",
+                        "on-primary": "#561f00",
+                        "secondary": "#fff3d2",
+                        "surface-elevated": "#141414",
+                        "text-muted": "#A1A1AA",
+                        "tertiary-fixed": "#d0e4ff",
+                        "inverse-on-surface": "#313030",
+                        "on-secondary-fixed": "#221b00",
+                        "surface-base": "#0A0A0A",
+                        "on-primary-fixed-variant": "#7a3000",
+                        "surface-container-highest": "#353534",
+                        "on-primary-fixed": "#351000",
+                        "border-subtle": "#262626",
+                        "tertiary": "#9ccaff",
+                        "secondary-fixed": "#ffe170",
+                        "outline-variant": "#5a4136",
+                        "on-tertiary-fixed": "#001d35",
+                        "background": "#131313",
+                        "error-container": "#93000a",
+                        "surface-dim": "#131313",
+                        "primary": "#ffb693",
+                        "on-error": "#690005",
+                        "surface-container-lowest": "#0e0e0e",
+                        "on-secondary-container": "#6f5c00",
+                        "on-secondary": "#3a3000",
+                        "on-tertiary": "#003257",
+                        "text-high-contrast": "#FFFFFF",
+                        "primary-fixed-dim": "#ffb693",
+                        "surface": "#131313",
+                        "on-secondary-fixed-variant": "#544600",
+                        "secondary-container": "#fdd400",
+                        "inverse-primary": "#a04100",
+                        "outline": "#a98a7d",
+                        "surface-container-high": "#2a2a2a",
+                        "on-tertiary-fixed-variant": "#00497b",
+                        "primary-container": "#ff6b00",
+                        "primary-fixed": "#ffdbcc",
+                        "on-background": "#e5e2e1",
+                        "on-tertiary-container": "#003357",
+                        "on-error-container": "#ffdad6",
+                        "tertiary-fixed-dim": "#9ccaff",
+                        "surface-bright": "#3a3939",
+                        "surface-container": "#201f1f",
+                        "surface-container-low": "#1c1b1b",
+                        "secondary-fixed-dim": "#e9c400",
+                        "on-surface-variant": "#e2bfb0",
+                        "error": "#ffb4ab",
+                        "inverse-surface": "#e5e2e1",
+                        "on-primary-container": "#572000"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "section-gap": "80px",
+                        "base": "8px",
+                        "gutter": "24px",
+                        "container-max": "1280px",
+                        "margin-mobile": "16px"
+                    },
+                    "fontFamily": {
+                        "display-xl-mobile": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "display-xl": ["Inter"],
+                        "headline-sm": ["Inter"],
+                        "body-md": ["Inter"],
+                        "body-sm": ["Inter"],
+                        "label-mono": ["JetBrains Mono"]
+                    },
+                    "fontSize": {
+                        "display-xl-mobile": ["40px", {"lineHeight": "1.1", "letterSpacing": "-0.03em", "fontWeight": "700"}],
+                        "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                        "display-xl": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "700"}],
+                        "headline-sm": ["24px", {"lineHeight": "1.3", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "letterSpacing": "0em", "fontWeight": "400"}],
+                        "body-sm": ["14px", {"lineHeight": "1.5", "letterSpacing": "0em", "fontWeight": "400"}],
+                        "label-mono": ["12px", {"lineHeight": "1.5", "letterSpacing": "0.05em", "fontWeight": "500"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            line-height: 1;
+        }
+        .glass-panel {
+            background: rgba(20, 20, 20, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        body {
+            background-color: #0A0A0A;
+            color: #e5e2e1;
+        }
+        input:focus, textarea:focus, select:focus {
+            outline: none;
+            box-shadow: 0 0 0 2px rgba(255, 107, 0, 0.2);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-background/70 backdrop-blur-xl border-b border-border-subtle">
+<div class="flex justify-between items-center max-w-container-max mx-auto px-margin-mobile md:px-gutter h-20">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary" data-icon="terminal">terminal</span>
+<span class="font-headline-sm text-headline-sm font-bold tracking-tighter text-text-high-contrast">MISTER CODERZ</span>
+</div>
+<nav class="hidden md:flex gap-8">
+<a class="font-label-mono text-label-mono uppercase tracking-widest text-text-muted hover:text-text-high-contrast transition-colors" href="#">Products</a>
+<a class="font-label-mono text-label-mono uppercase tracking-widest text-text-muted hover:text-text-high-contrast transition-colors" href="#">Services</a>
+<a class="font-label-mono text-label-mono uppercase tracking-widest text-text-muted hover:text-text-high-contrast transition-colors" href="#">Labs</a>
+<a class="font-label-mono text-label-mono uppercase tracking-widest text-primary border-b border-primary" href="#">Contact</a>
+</nav>
+<button class="font-label-mono text-label-mono uppercase tracking-widest text-text-high-contrast bg-surface-elevated px-6 py-2 border border-border-subtle hover:bg-surface-container transition-all active:scale-95">
+                GitHub
+            </button>
+</div>
+</header>
+<main class="pt-32 pb-section-gap">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-gutter">
+<!-- Hero Section -->
+<div class="max-w-3xl mb-20">
+<div class="inline-flex items-center gap-2 px-3 py-1 bg-surface-elevated border border-border-subtle rounded-full mb-6">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+<span class="font-label-mono text-label-mono uppercase tracking-widest text-text-muted">Available for new projects</span>
+</div>
+<h1 class="font-display-xl text-display-xl mb-6 text-text-high-contrast">Let's Build Something Great</h1>
+<p class="font-body-md text-body-md text-text-muted leading-relaxed max-w-2xl">
+                    Partner with MISTER CODERZ for custom software, AI integration, and digital transformation. We transform complex problems into elegant engineering solutions.
+                </p>
+</div>
+<!-- Main Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+<!-- Contact Form Canvas -->
+<div class="lg:col-span-7 bg-surface-elevated border border-border-subtle p-8 md:p-12 relative overflow-hidden group">
+<!-- Subtle ambient glow -->
+<div class="absolute -top-24 -right-24 w-64 h-64 bg-primary/5 blur-[120px] pointer-events-none transition-opacity group-hover:opacity-100 opacity-0 duration-700"></div>
+<form class="relative z-10 space-y-8">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="space-y-2">
+<label class="font-label-mono text-label-mono uppercase tracking-widest text-text-muted block">Name</label>
+<input class="w-full bg-surface-base border border-border-subtle px-4 py-4 font-label-mono text-text-high-contrast focus:border-primary-container transition-all placeholder:opacity-30" placeholder="ALAN TURING" type="text"/>
+</div>
+<div class="space-y-2">
+<label class="font-label-mono text-label-mono uppercase tracking-widest text-text-muted block">Email</label>
+<input class="w-full bg-surface-base border border-border-subtle px-4 py-4 font-label-mono text-text-high-contrast focus:border-primary-container transition-all placeholder:opacity-30" placeholder="ALAN@ENIGMA.TECH" type="email"/>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="space-y-2">
+<label class="font-label-mono text-label-mono uppercase tracking-widest text-text-muted block">Organization</label>
+<input class="w-full bg-surface-base border border-border-subtle px-4 py-4 font-label-mono text-text-high-contrast focus:border-primary-container transition-all placeholder:opacity-30" placeholder="CYBERNETICS LTD" type="text"/>
+</div>
+<div class="space-y-2">
+<label class="font-label-mono text-label-mono uppercase tracking-widest text-text-muted block">Budget (Optional)</label>
+<select class="w-full bg-surface-base border border-border-subtle px-4 py-4 font-label-mono text-text-high-contrast focus:border-primary-container transition-all appearance-none cursor-pointer">
+<option disabled="" selected="" value="">SELECT RANGE</option>
+<option>$25k - $50k</option>
+<option>$50k - $100k</option>
+<option>$100k+</option>
+</select>
+</div>
+</div>
+<div class="space-y-2">
+<label class="font-label-mono text-label-mono uppercase tracking-widest text-text-muted block">Project Details</label>
+<textarea class="w-full bg-surface-base border border-border-subtle px-4 py-4 font-label-mono text-text-high-contrast focus:border-primary-container transition-all placeholder:opacity-30 resize-none" placeholder="DESCRIBE THE CHALLENGE, STACK, AND VISION..." rows="5"></textarea>
+</div>
+<button class="w-full md:w-auto bg-primary-container text-on-primary-container font-label-mono text-label-mono uppercase tracking-widest px-10 py-5 font-bold hover:brightness-110 active:scale-95 transition-all flex items-center justify-center gap-3 group" type="submit">
+                            Start a Project
+                            <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</form>
+</div>
+<!-- Info Sidebar -->
+<div class="lg:col-span-5 flex flex-col gap-8">
+<!-- Location Card -->
+<div class="bg-surface-elevated border border-border-subtle p-8 h-fit">
+<h3 class="font-label-mono text-label-mono uppercase tracking-widest text-primary mb-6">Presence</h3>
+<div class="flex items-start gap-4 mb-8">
+<div class="w-12 h-12 bg-surface-base border border-border-subtle flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-text-high-contrast" data-icon="public">public</span>
+</div>
+<div>
+<p class="font-headline-sm text-headline-sm text-text-high-contrast mb-1">Digital-first</p>
+<p class="font-body-sm text-body-sm text-text-muted">Distributed engineering across UTC+1 to UTC-8. We build where the talent is.</p>
+</div>
+</div>
+<div class="w-full aspect-video bg-surface-base border border-border-subtle overflow-hidden relative">
+<div class="absolute inset-0 opacity-40 grayscale contrast-125">
+<img class="w-full h-full object-cover" data-alt="A high-contrast monochrome satellite view of a world map with glowing network nodes connecting major cities. The aesthetic is ultra-modern and technical, mirroring a dark-mode engineering dashboard with sharp 1px grid lines and a palette of deep charcoal and muted amber accents. The lighting is low-key, emphasizing the digital connectivity of a remote-first technology studio." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCHuK0TMnrQ7wFq-hBvraQbrI5baVKeHu2LLcRiPqbNl7lOzFXaT02yumJS9iLgmED8cpKtFYX7kSn_c1vwiSuJzbbwI4KQyjrE2C9UjLRi5kNNdbgmvByq6WFrpmw00quhsMW0SzRYIiz8Uk-n76rDrGDw1AzkZyI-vOFKKhQFBb8SwxrlaUvW-IpAPLQfwNftmwwdMSkm6knNmP9lVgxnMt7tEfGoZk5J8KzQia7v2l_oJuAxYBDUgtTSJAuj6Vrx5tNzaThfc7OB"/>
+</div>
+<div class="absolute inset-0 flex items-center justify-center">
+<div class="w-4 h-4 bg-primary rounded-full animate-ping"></div>
+<div class="w-2 h-2 bg-primary rounded-full absolute"></div>
+</div>
+</div>
+</div>
+<!-- Connect Card -->
+<div class="bg-surface-elevated border border-border-subtle p-8">
+<h3 class="font-label-mono text-label-mono uppercase tracking-widest text-primary mb-6">Connect</h3>
+<div class="grid grid-cols-2 gap-4">
+<a class="flex items-center gap-3 p-4 bg-surface-base border border-border-subtle hover:border-primary/50 transition-colors group" href="#">
+<span class="material-symbols-outlined text-text-muted group-hover:text-text-high-contrast" data-icon="code">code</span>
+<span class="font-label-mono text-label-mono uppercase tracking-widest">GitHub</span>
+</a>
+<a class="flex items-center gap-3 p-4 bg-surface-base border border-border-subtle hover:border-primary/50 transition-colors group" href="#">
+<span class="material-symbols-outlined text-text-muted group-hover:text-text-high-contrast" data-icon="share">share</span>
+<span class="font-label-mono text-label-mono uppercase tracking-widest">LinkedIn</span>
+</a>
+<a class="flex items-center gap-3 p-4 bg-surface-base border border-border-subtle hover:border-primary/50 transition-colors group" href="#">
+<span class="material-symbols-outlined text-text-muted group-hover:text-text-high-contrast" data-icon="terminal">terminal</span>
+<span class="font-label-mono text-label-mono uppercase tracking-widest">Twitter</span>
+</a>
+<a class="flex items-center gap-3 p-4 bg-surface-base border border-border-subtle hover:border-primary/50 transition-colors group" href="#">
+<span class="material-symbols-outlined text-text-muted group-hover:text-text-high-contrast" data-icon="mail">mail</span>
+<span class="font-label-mono text-label-mono uppercase tracking-widest">Email</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-base border-t border-border-subtle">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-section-gap max-w-container-max mx-auto px-margin-mobile md:px-gutter py-20">
+<div class="md:col-span-2">
+<div class="flex items-center gap-3 mb-6">
+<span class="material-symbols-outlined text-primary" data-icon="terminal">terminal</span>
+<span class="font-headline-sm text-headline-sm font-bold text-text-high-contrast">MISTER CODERZ</span>
+</div>
+<p class="font-body-sm text-body-sm text-text-muted max-w-xs mb-8">
+                    An independent studio dedicated to the intersection of code and art. High-performance software for high-growth teams.
+                </p>
+<p class="font-body-sm text-body-sm text-text-muted">© 2024 MISTER CODERZ. Engineering as Art.</p>
+</div>
+<div>
+<h4 class="font-label-mono text-label-mono uppercase tracking-widest text-text-high-contrast mb-6">Studio</h4>
+<ul class="space-y-4">
+<li><a class="font-body-sm text-body-sm text-text-muted hover:text-primary transition-colors" href="#">Products</a></li>
+<li><a class="font-body-sm text-body-sm text-text-muted hover:text-primary transition-colors" href="#">Services</a></li>
+<li><a class="font-body-sm text-body-sm text-text-muted hover:text-primary transition-colors" href="#">Labs</a></li>
+<li><a class="font-body-sm text-body-sm text-primary transition-colors" href="#">Contact</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label-mono text-label-mono uppercase tracking-widest text-text-high-contrast mb-6">Legal &amp; Social</h4>
+<ul class="space-y-4">
+<li><a class="font-body-sm text-body-sm text-text-muted hover:text-primary transition-colors" href="#">GitHub</a></li>
+<li><a class="font-body-sm text-body-sm text-text-muted hover:text-primary transition-colors" href="#">Privacy</a></li>
+<li><a class="font-body-sm text-body-sm text-text-muted hover:text-primary transition-colors" href="#">Terms</a></li>
+</ul>
+</div>
+</div>
+</footer>
+<script>
+        // Micro-interaction for form focus
+        const inputs = document.querySelectorAll('input, textarea, select');
+        inputs.forEach(input => {
+            input.addEventListener('focus', () => {
+                input.parentElement.querySelector('label').style.color = '#ffb693';
+            });
+            input.addEventListener('blur', () => {
+                input.parentElement.querySelector('label').style.color = '#A1A1AA';
+            });
+        });
+
+        // Form submission animation (mock)
+        document.querySelector('form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const btn = e.target.querySelector('button');
+            const originalText = btn.innerHTML;
+            btn.innerHTML = '<span class="material-symbols-outlined animate-spin" data-icon="progress_activity">progress_activity</span> Processing...';
+            btn.disabled = true;
+            
+            setTimeout(() => {
+                btn.innerHTML = '<span class="material-symbols-outlined" data-icon="check_circle">check_circle</span> Message Sent';
+                btn.classList.replace('bg-primary-container', 'bg-green-600');
+                btn.classList.replace('text-on-primary-container', 'text-white');
+                e.target.reset();
+            }, 2000);
+        });
+    </script>
+</body></html>

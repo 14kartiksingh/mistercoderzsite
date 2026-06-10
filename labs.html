@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Labs | MISTER CODERZ</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-surface": "#e5e2e1",
+                      "tertiary-container": "#059eff",
+                      "surface-tint": "#ffb693",
+                      "surface-variant": "#353534",
+                      "on-primary": "#561f00",
+                      "secondary": "#fff3d2",
+                      "surface-elevated": "#141414",
+                      "text-muted": "#A1A1AA",
+                      "tertiary-fixed": "#d0e4ff",
+                      "inverse-on-surface": "#313030",
+                      "on-secondary-fixed": "#221b00",
+                      "surface-base": "#0A0A0A",
+                      "on-primary-fixed-variant": "#7a3000",
+                      "surface-container-highest": "#353534",
+                      "on-primary-fixed": "#351000",
+                      "border-subtle": "#262626",
+                      "tertiary": "#9ccaff",
+                      "secondary-fixed": "#ffe170",
+                      "outline-variant": "#5a4136",
+                      "on-tertiary-fixed": "#001d35",
+                      "background": "#131313",
+                      "error-container": "#93000a",
+                      "surface-dim": "#131313",
+                      "primary": "#ffb693",
+                      "on-error": "#690005",
+                      "surface-container-lowest": "#0e0e0e",
+                      "on-secondary-container": "#6f5c00",
+                      "on-secondary": "#3a3000",
+                      "on-tertiary": "#003257",
+                      "text-high-contrast": "#FFFFFF",
+                      "primary-fixed-dim": "#ffb693",
+                      "surface": "#131313",
+                      "on-secondary-fixed-variant": "#544600",
+                      "secondary-container": "#fdd400",
+                      "inverse-primary": "#a04100",
+                      "outline": "#a98a7d",
+                      "surface-container-high": "#2a2a2a",
+                      "on-tertiary-fixed-variant": "#00497b",
+                      "primary-container": "#ff6b00",
+                      "primary-fixed": "#ffdbcc",
+                      "on-background": "#e5e2e1",
+                      "on-tertiary-container": "#003357",
+                      "on-error-container": "#ffdad6",
+                      "tertiary-fixed-dim": "#9ccaff",
+                      "surface-bright": "#3a3939",
+                      "surface-container": "#201f1f",
+                      "surface-container-low": "#1c1b1b",
+                      "secondary-fixed-dim": "#e9c400",
+                      "on-surface-variant": "#e2bfb0",
+                      "error": "#ffb4ab",
+                      "inverse-surface": "#e5e2e1",
+                      "on-primary-container": "#572000"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "section-gap": "80px",
+                      "base": "8px",
+                      "gutter": "24px",
+                      "container-max": "1280px",
+                      "margin-mobile": "16px"
+              },
+              "fontFamily": {
+                      "display-xl-mobile": ["Inter"],
+                      "headline-lg": ["Inter"],
+                      "display-xl": ["Inter"],
+                      "headline-sm": ["Inter"],
+                      "body-md": ["Inter"],
+                      "body-sm": ["Inter"],
+                      "label-mono": ["JetBrains Mono"]
+              },
+              "fontSize": {
+                      "display-xl-mobile": ["40px", {"lineHeight": "1.1", "letterSpacing": "-0.03em", "fontWeight": "700"}],
+                      "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                      "display-xl": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "700"}],
+                      "headline-sm": ["24px", {"lineHeight": "1.3", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                      "body-md": ["16px", {"lineHeight": "1.6", "letterSpacing": "0em", "fontWeight": "400"}],
+                      "body-sm": ["14px", {"lineHeight": "1.5", "letterSpacing": "0em", "fontWeight": "400"}],
+                      "label-mono": ["12px", {"lineHeight": "1.5", "letterSpacing": "0.05em", "fontWeight": "500"}]
+              }
+            },
+          },
+        }
+    </script>
+<style>
+        body {
+            background-color: #0A0A0A;
+            color: #e5e2e1;
+            overflow-x: hidden;
+        }
+        .glass-nav {
+            background: rgba(10, 10, 10, 0.7);
+            backdrop-filter: blur(20px);
+        }
+        .hero-gradient {
+            background: radial-gradient(circle at 50% 50%, rgba(255, 107, 0, 0.05) 0%, transparent 70%);
+        }
+        .bento-card {
+            transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1), border-color 0.3s ease;
+        }
+        .bento-card:hover {
+            transform: translateY(-4px);
+            border-color: #ff6b00;
+        }
+        .status-dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+        }
+        .animate-pulse-slow {
+            animation: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+        .grid-bg {
+            background-image: linear-gradient(to right, #262626 1px, transparent 1px), linear-gradient(to bottom, #262626 1px, transparent 1px);
+            background-size: 40px 40px;
+            mask-image: radial-gradient(ellipse 60% 50% at 50% 0%, black 0%, transparent 70%);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="font-body-md text-body-md selection:bg-primary-container selection:text-on-primary-container">
+<!-- Top Navigation -->
+<nav class="fixed top-0 w-full z-50 border-b border-border-subtle bg-background/70 backdrop-blur-xl">
+<div class="flex justify-between items-center max-w-container-max mx-auto px-margin-mobile md:px-gutter h-20">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary" data-icon="terminal">terminal</span>
+<span class="font-headline-sm text-headline-sm font-bold tracking-tighter text-text-high-contrast">MISTER CODERZ</span>
+</div>
+<div class="hidden md:flex items-center gap-8 font-label-mono text-label-mono uppercase tracking-widest">
+<a class="text-text-muted hover:text-text-high-contrast transition-colors" href="products.html">Products</a>
+<a class="text-text-muted hover:text-text-high-contrast transition-colors" href="#">Services</a>
+<a class="text-text-muted hover:text-text-high-contrast transition-colors" href="#">About</a>
+<a class="text-primary border-b border-primary" href="#">Labs</a>
+<a class="px-6 py-2 border border-border-subtle text-text-high-contrast hover:bg-surface-elevated transition-all active:scale-95" href="#">Contact</a>
+</div>
+<button class="md:hidden text-text-high-contrast">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+</div>
+</nav>
+<main class="relative pt-20">
+<!-- Background Decor -->
+<div class="absolute inset-0 grid-bg pointer-events-none opacity-50"></div>
+<div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[800px] hero-gradient pointer-events-none"></div>
+<!-- Hero Section -->
+<section class="relative pt-24 pb-16 px-margin-mobile md:px-gutter max-w-container-max mx-auto text-center">
+<div class="inline-flex items-center gap-2 px-3 py-1 bg-surface-elevated border border-border-subtle rounded-full mb-6">
+<span class="relative flex h-2 w-2">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+</span>
+<span class="font-label-mono text-[10px] tracking-widest uppercase text-primary">Experimental Division</span>
+</div>
+<h1 class="font-display-xl text-display-xl md:text-display-xl text-text-high-contrast mb-6 tracking-tighter">
+                The Labs
+            </h1>
+<p class="max-w-2xl mx-auto text-text-muted font-body-md text-body-md md:text-headline-sm">
+                Where future concepts and experimental technologies take shape. We build what's next, pushing the boundaries of engineering and design through rigorous exploration.
+            </p>
+</section>
+<!-- Vision Section -->
+<section class="py-12 px-margin-mobile md:px-gutter max-w-container-max mx-auto">
+<div class="bg-surface-elevated border border-border-subtle p-8 md:p-12 relative overflow-hidden group">
+<div class="absolute top-0 right-0 p-8 opacity-10 group-hover:opacity-20 transition-opacity">
+<span class="material-symbols-outlined text-[120px]" data-icon="science">science</span>
+</div>
+<div class="max-w-3xl relative z-10">
+<h2 class="font-label-mono text-label-mono uppercase tracking-[0.2em] text-primary mb-4">The Vision</h2>
+<p class="font-headline-sm text-headline-sm text-text-high-contrast leading-relaxed italic">
+                        "Engineering is not just about solving today's problems; it's about anticipating the friction of tomorrow. Our Labs exist to bridge the gap between speculative research and deployable reality, ensuring that every piece of tech we ship is built on a foundation of proven curiosity."
+                    </p>
+<div class="mt-8 h-px w-24 bg-primary"></div>
+</div>
+</div>
+</section>
+<!-- Active Experiments -->
+<section class="py-section-gap px-margin-mobile md:px-gutter max-w-container-max mx-auto">
+<div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-4">
+<div>
+<h2 class="font-headline-lg text-headline-lg text-text-high-contrast mb-2">Active Experiments</h2>
+<p class="text-text-muted font-label-mono text-label-mono tracking-wider uppercase">Live R&amp;D Pipeline • Updated Weekly</p>
+</div>
+<div class="flex gap-4 font-label-mono text-[10px] tracking-tighter uppercase text-text-muted">
+<span class="flex items-center gap-2"><span class="status-dot bg-blue-500"></span> Concept</span>
+<span class="flex items-center gap-2"><span class="status-dot bg-amber-500"></span> Research</span>
+<span class="flex items-center gap-2"><span class="status-dot bg-primary"></span> Development</span>
+</div>
+</div>
+<!-- Bento Grid -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-base">
+<!-- AI Digital Twin -->
+<div class="md:col-span-8 group bento-card bg-surface-elevated border border-border-subtle p-8 relative overflow-hidden flex flex-col justify-between min-h-[400px]">
+<div class="absolute top-0 right-0 w-1/2 h-full opacity-30">
+
+</div>
+<div class="relative z-10">
+<div class="flex items-center gap-3 mb-6">
+<span class="px-2 py-0.5 border border-blue-500 text-blue-500 font-label-mono text-[10px] uppercase">Concept</span>
+<span class="font-label-mono text-text-muted text-[10px]">PROJECT_ALPHA_01</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-text-high-contrast mb-4">AI Digital Twin</h3>
+<p class="text-text-muted max-w-md">Synthetic consciousness modeling for hyper-personalized user interfaces. Building a bridge between user behavior and adaptive system response.</p>
+</div>
+<div class="relative z-10 flex gap-4 mt-8">
+<button class="font-label-mono text-label-mono uppercase text-primary flex items-center gap-2 group-hover:translate-x-1 transition-transform">
+                            View Thesis <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- CodeStalker AI -->
+<div class="md:col-span-4 group bento-card bg-surface-elevated border border-border-subtle p-8 relative flex flex-col justify-between">
+<div class="mb-8">
+<div class="flex items-center gap-3 mb-6">
+<span class="px-2 py-0.5 border border-primary text-primary font-label-mono text-[10px] uppercase">Development</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-text-high-contrast mb-4">CodeStalker AI</h3>
+<p class="text-text-muted">Predictive refactoring engine that learns your team's unique architectural patterns to automate maintenance.</p>
+</div>
+<div class="bg-background/50 border border-border-subtle rounded-lg p-4 font-label-mono text-[11px] text-text-muted">
+<div class="flex justify-between mb-2"><span>Memory:</span> <span class="text-primary">92%</span></div>
+<div class="w-full bg-border-subtle h-1"><div class="bg-primary h-full" style="width: 92%"></div></div>
+</div>
+</div>
+<!-- PDF Tools Platform -->
+<div class="md:col-span-5 group bento-card bg-surface-elevated border border-border-subtle p-8 relative flex flex-col">
+<div class="mb-8">
+<div class="flex items-center gap-3 mb-6">
+<span class="px-2 py-0.5 border border-amber-500 text-amber-500 font-label-mono text-[10px] uppercase">Research</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-text-high-contrast mb-4">PDF Intelligence</h3>
+<p class="text-text-muted mb-6">Extracting structured semantic data from legacy document formats using neural layout analysis.</p>
+<div class="aspect-video w-full rounded border border-border-subtle overflow-hidden relative grayscale hover:grayscale-0 transition-all">
+<img class="w-full h-full object-cover" data-alt="A professional top-down view of a modern workstation with multiple high-resolution monitors displaying complex data visualizations, neural network diagrams, and code structures. The lighting is low-key with sharp orange accents, reflecting a high-end technical studio environment with a focus on deep research and sophisticated engineering." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC31kZ8os5RVXlaB38Iml1EdWZctuXIQK49vF6aRdmNZB2ugJFqvVsXrxdlJdACvcd9wz17hzIc-oWIWuRW06Ep80sxGrLMpUZcp46TSTDa5aLeccoeky-71CW6t2JqSl_s6-8cXj4CSoRZxanV1VuhCd-bK3xliydOhQG2LtNcJXeuv3NKKta7CGK_Kg54xmL1pO9KLof6JY1HeKwOhOLawWbc0L_3xnNAYHOYvvm5hWzE1Uq6o2jOkamPpQkndEKaIqFsfbti6a7u"/>
+<div class="absolute inset-0 bg-primary/10 mix-blend-overlay"></div>
+</div>
+</div>
+</div>
+<!-- NAS Infrastructure -->
+<div class="md:col-span-7 group bento-card bg-surface-elevated border border-border-subtle p-8 relative overflow-hidden flex flex-col justify-end">
+<div class="absolute inset-0 -z-10 opacity-40">
+<img class="w-full h-full object-cover" data-alt="A macro close-up of high-density server rack components in a dark data center environment. Glowing amber LED indicators create a technical, rhythmic pattern against the matte black metallic surfaces. The composition emphasizes precision, stability, and high-performance infrastructure, echoing the MISTER CODERZ technical aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD-AFyuN3_d8-7U2uRrt-b9VbYEISxd6kdeRb1H8vWAKZFO5dRBBWFkChQO4lP5lEFjo79KM9sMlM9uKaaMCUUUhkdMJdibaYQEkZDQ58NKIzdv9k0VHjv7rzI0CNm7Pj3j9yaI9sd07mJADdOUnkEThmMKG2LpyYyaDrav8i8RXwN02Yw5e29dKDarNgLx3TZgY35I-PtPtKF0ktpWoYWzb4uDQ9e_LOHWJUb2IW1HsJmjYxYKU0u_qxJNEkBBGCcGFoxwcGWkjBZs"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-elevated via-surface-elevated/80 to-transparent"></div>
+</div>
+<div class="relative">
+<div class="flex items-center gap-3 mb-4">
+<span class="px-2 py-0.5 border border-primary text-primary font-label-mono text-[10px] uppercase">Development</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-text-high-contrast mb-4">NAS Core Cluster</h3>
+<p class="text-text-muted max-w-lg mb-6">Proprietary decentralized storage architecture designed for zero-latency AI model training and distributed data persistence.</p>
+<div class="flex gap-2">
+<span class="px-3 py-1 bg-background text-text-muted font-label-mono text-[10px] border border-border-subtle">NVME GEN 5</span>
+<span class="px-3 py-1 bg-background text-text-muted font-label-mono text-[10px] border border-border-subtle">RAY DISTRIBUTED</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Subtle Stats / Ticker -->
+<section class="border-y border-border-subtle bg-surface-base py-10 overflow-hidden whitespace-nowrap">
+<div class="inline-block animate-marquee font-label-mono text-label-mono text-text-muted uppercase tracking-[0.4em] px-gutter">
+                System Status: Nominal • R&amp;D Intensity: 114% • Active Nodes: 42 • Latency: 4ms • System Status: Nominal • R&amp;D Intensity: 114% • Active Nodes: 42 • Latency: 4ms • System Status: Nominal • R&amp;D Intensity: 114% • Active Nodes: 42 • Latency: 4ms
+            </div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-base border-t border-border-subtle">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-section-gap max-w-container-max mx-auto px-margin-mobile md:px-gutter py-20">
+<div class="md:col-span-2">
+<div class="flex items-center gap-3 mb-6">
+<span class="material-symbols-outlined text-primary" data-icon="terminal">terminal</span>
+<span class="font-headline-sm text-headline-sm font-bold text-text-high-contrast">MISTER CODERZ</span>
+</div>
+<p class="text-text-muted max-w-xs mb-8">
+                    An independent studio dedicated to the intersection of high-fidelity engineering and artistic precision.
+                </p>
+<div class="flex gap-6 font-label-mono text-label-mono uppercase tracking-widest text-text-muted">
+<a class="hover:text-primary transition-colors" href="#">GitHub</a>
+<a class="hover:text-primary transition-colors" href="#">X / Twitter</a>
+</div>
+</div>
+<div>
+<h4 class="font-label-mono text-label-mono uppercase tracking-[0.2em] text-text-high-contrast mb-6">Explore</h4>
+<ul class="space-y-4 font-body-sm text-body-sm text-text-muted">
+<li><a class="hover:text-primary transition-colors" href="#">Products</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Services</a></li>
+<li><a class="text-primary" href="#">Labs</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Contact</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label-mono text-label-mono uppercase tracking-[0.2em] text-text-high-contrast mb-6">Legal</h4>
+<ul class="space-y-4 font-body-sm text-body-sm text-text-muted">
+<li><a class="hover:text-primary transition-colors" href="#">Privacy</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Terms</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Cookies</a></li>
+</ul>
+</div>
+</div>
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-gutter py-8 border-t border-border-subtle flex flex-col md:flex-row justify-between items-center gap-4">
+<span class="font-body-sm text-body-sm text-text-muted">© 2024 MISTER CODERZ. Engineering as Art.</span>
+<div class="flex items-center gap-2 text-text-muted font-label-mono text-[10px]">
+<span class="status-dot bg-green-500 animate-pulse"></span>
+                ALL SYSTEMS OPERATIONAL
+            </div>
+</div>
+</footer>
+<style>
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        .animate-marquee {
+            display: inline-block;
+            animation: marquee 40s linear infinite;
+        }
+    </style>
+<script>
+        // Micro-interaction: Smooth Reveal
+        document.addEventListener('DOMContentLoaded', () => {
+            const cards = document.querySelectorAll('.bento-card');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry, index) => {
+                    if (entry.isIntersecting) {
+                        setTimeout(() => {
+                            entry.target.style.opacity = '1';
+                            entry.target.style.transform = 'translateY(0)';
+                        }, index * 100);
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            cards.forEach(card => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                card.style.transition = 'all 0.6s cubic-bezier(0.2, 0.8, 0.2, 1)';
+                observer.observe(card);
+            });
+        });
+    </script>
+</body></html>
